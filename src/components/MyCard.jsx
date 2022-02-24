@@ -1,14 +1,17 @@
 import '../assets/styles/components/MyCard.css';
-import imgCard from '../assets/images/jeans3.jpg';
+import monImage from '../assets/images/jeans3.jpg';
 
-export default function MyCard() {
+export default function MyCard(props) {
+    const {image1, libelle, pu, description} = props.data;
+    const img = require('../' + image1);
+
     return (
       <div className="my-card">
-        <img src={imgCard} alt="Denim Jeans" />
-        <h1>Tailored Jeans</h1>
-        <p className="price">$19.99</p>
-        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-        <p><button>Add to Cart</button></p>
+        <img src={img} alt="card_picture" />
+        <h1>{libelle}</h1>
+        <p className="price"><b>MGA {pu}</b></p>
+        <p>{description}</p>
+        <p><button>Ajouter</button></p>
       </div>
     );
 }
