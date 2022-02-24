@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import '../../assets/styles/Header.css';
 
+import imgLogo from '../../assets/images/logo.png';
+
 export default function Header() {
     return (
         <div className="my-header">
-            <h1>My-Store</h1>
+            <img src={imgLogo} alt="logo" />
+            <h1>My-store</h1>
         </div>
     );
   }

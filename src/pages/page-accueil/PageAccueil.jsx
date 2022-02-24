@@ -1,11 +1,28 @@
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 import '../../assets/styles/Section.css';
+import PageContainer from '../../pages/layout/PageContainer';
+import MyCard from '../../components/MyCard';
 
 export default function PageAccueil() {
     return (
-      <div className="my-section">
-          <h1>London</h1>
-          <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-          <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-      </div>
+      <PageContainer>
+          <h1>Liste des articles</h1>
+          <Row>
+            <Col>
+              <MyCard />
+            </Col>
+            <Col>
+              <MyCard />
+            </Col>
+            <Col>
+              <MyCard />
+            </Col>
+            <Col>
+              <MyCard />
+            </Col>
+          </Row>
+      </PageContainer>
     );
   }
