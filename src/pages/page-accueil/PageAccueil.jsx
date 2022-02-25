@@ -27,8 +27,8 @@ function PageAccueil() {
     <PageContainer>
         <h1>Liste des articles</h1>
         <Row>
-          {data.articles.map(item =>  
-            <Col key={item.id}>
+          {data.articles.map((item, index) =>  
+            <Col key={index}>
               <MyCard data={item} />
             </Col>
           )}

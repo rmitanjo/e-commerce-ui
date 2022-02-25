@@ -7,15 +7,18 @@ import {
 import App from "./App";
 
 import PageAccueil from './pages/page-accueil/PageAccueil';
-import PageArticles from './pages/page-articles/PageArticles';
+import PagePanier from './pages/page-panier/PagePanier';
 
 const rootElement = document.getElementById("root");
+
 render(
   <Router>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="accueil" element={<PageAccueil />} />
-        <Route path="articles" element={<PageArticles />} />
+        <Route path="panier" element={<PagePanier />} />
+        {/* The default route */}
+        <Route path="/" element={<PageAccueil />} />
       </Route>
     </Routes>
   </Router>,
