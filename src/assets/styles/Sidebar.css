@@ -1,8 +1,8 @@
 .my-sidebar {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;
+    display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	width: 18%;
+    overflow: auto;
+    /*background-color: #2980b9;*/
 }

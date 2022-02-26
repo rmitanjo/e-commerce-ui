@@ -1,16 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import '../assets/styles/components/MyCard.css';
 
-import { addToCart, getCart } from '../redux/actions/cart.action';
+import { addToCart } from '../redux/actions/cart.action';
 
 export default function MyCard(props) {
-    const {id, image1, libelle, pu, description} = props.data;
+    const {id, ref, image1, libelle, pu, description} = props.data;
     const img = require('../' + image1);
 
     const dispatch = useDispatch();
     const addCartAction = () => {
       //Adding article with some quantities in the cart
-      dispatch(addToCart({ id: id, qty: 1 }));
+      dispatch(addToCart(
+        { 
+          id: id,
+          ref: ref,
+          qty: 1,
+          pu: pu,
+          libelle: libelle,
+          desc: description,
+        }
+      ));
     }
 
     return (

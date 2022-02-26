@@ -1,8 +1,8 @@
 function MyCartItem(props) {
-    const {id, qty} = props.data;
+    const {id, qty, libelle} = props.data;
 
     return (
-        <li key={id}>{id} - {qty}</li>
+        <li key={id}>{libelle} - {qty}</li>
     )
 }
 

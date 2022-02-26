@@ -1,5 +1,7 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
-export const GET_CART = 'GET_CART';
+export const INCREASE_QTY = 'INCREASE_QTY';
+export const DECREASE_QTY = 'DECREASE_QTY';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
 
 export const addToCart = (articleItem) => {
     return (dispatch) => {
@@ -7,8 +9,20 @@ export const addToCart = (articleItem) => {
     }
 }
 
-export const getCart = () => {
+export const increaseQty = (id) => {
     return (dispatch) => {
-        dispatch({ type: GET_CART });
+        dispatch({ type: INCREASE_QTY, payload: id });
+    }
+}
+
+export const decreaseQty = (id) => {
+    return (dispatch) => {
+        dispatch({ type: DECREASE_QTY, payload: id });
+    }
+}
+
+export const removeItem = (id) => {
+    return (dispatch) => {
+        dispatch({ type: REMOVE_ITEM, payload: id });
     }
 }

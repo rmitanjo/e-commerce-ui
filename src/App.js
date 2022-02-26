@@ -24,13 +24,13 @@ export const store = createStore(
 function App() {
   return (
         <Provider store={store}>
-          <div>
-            <Header />
-            <Nav />
+          <Header />
+          <Nav />
+          <div id="container">
             <Sidebar />
             <Outlet />
-            <Footer />
           </div>
+          <Footer />
         </Provider>
   );
 }

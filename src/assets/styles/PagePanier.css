@@ -1,0 +1,19 @@
+.my-page-panier {
+    
+}
+
+.my-page-panier table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+  
+.my-page-panier th, .my-page-panier td {
+    text-align: left;
+    padding: 16px;
+}
+  
+.my-page-panier tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
