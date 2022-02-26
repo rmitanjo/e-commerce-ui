@@ -2,6 +2,7 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const INCREASE_QTY = 'INCREASE_QTY';
 export const DECREASE_QTY = 'DECREASE_QTY';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const EMPTY_CART = 'EMPTY_CART';
 
 export const addToCart = (articleItem) => {
     return (dispatch) => {
@@ -24,5 +25,11 @@ export const decreaseQty = (id) => {
 export const removeItem = (id) => {
     return (dispatch) => {
         dispatch({ type: REMOVE_ITEM, payload: id });
+    }
+}
+
+export const emptyCart = () => {
+    return (dispatch) => {
+        dispatch({ type: EMPTY_CART });
     }
 }

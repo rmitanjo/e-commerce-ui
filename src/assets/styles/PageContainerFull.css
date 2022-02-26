@@ -1,9 +1,9 @@
-.my-page-container {
+.my-page-container-full {
     display: inline-block;
 	vertical-align: top;
 	height: 100%;
-	width: 85%;
+	width: 100%;
 	overflow: auto;
-	
-	padding: 0.5em 0.5em 0.5em 0.5em;
+
+	padding: 0.5em 1em 2em 1em;
 }

@@ -3,6 +3,7 @@ import {
     INCREASE_QTY,
     DECREASE_QTY,
     REMOVE_ITEM,
+    EMPTY_CART,
 } from '../actions/cart.action';
 
 const initialCartState = {
@@ -115,6 +116,15 @@ export default function cartReducer(state = initialCartState, action) {
         }
 
         return state;
+    }
+    else if(action.type === EMPTY_CART) {
+        const newState = {
+            ...state,
+            articles: [],
+            totalCount: 0,
+        }
+        
+        return newState;
     }
     else
          return state;

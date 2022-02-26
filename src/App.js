@@ -6,7 +6,6 @@ import './App.css';
 
 import Header from './pages/layout/Header';
 import Nav from './pages/layout/Nav';
-import Sidebar from './pages/layout/Sidebar';
 import Footer from './pages/layout/Footer';
 
 import { Provider } from 'react-redux';
@@ -27,7 +26,6 @@ function App() {
           <Header />
           <Nav />
           <div id="container">
-            <Sidebar />
             <Outlet />
           </div>
           <Footer />

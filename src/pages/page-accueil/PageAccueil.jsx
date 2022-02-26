@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import { Fragment , useState, useEffect } from 'react'
 import axios from 'axios';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import '../../assets/styles/Section.css';
+import Sidebar from '../layout/Sidebar';
 import PageContainer from '../../pages/layout/PageContainer';
 import MyCard from '../../components/MyCard';
 
@@ -24,16 +25,19 @@ function PageAccueil() {
   }, []);
 
   return (
-    <PageContainer>
-        <h1>Liste des articles</h1>
-        <Row>
-          {data.articles.map((item, index) =>  
-            <Col key={index}>
-              <MyCard data={item} />
-            </Col>
-          )}
-        </Row>
-    </PageContainer>
+    <Fragment>
+      <Sidebar />
+      <PageContainer>
+          <h1>Liste des articles</h1>
+          <Row>
+            {data.articles.map((item, index) =>  
+              <Col key={index}>
+                <MyCard data={item} />
+              </Col>
+            )}
+          </Row>
+      </PageContainer>
+    </Fragment>
   );
 }
 

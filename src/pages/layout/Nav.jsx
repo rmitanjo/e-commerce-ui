@@ -7,6 +7,7 @@ export default function Nav() {
             <ul>
                 <li><NavLink className={({ isActive }) => isActive ? "active" : ""} to="/accueil">Accueil</NavLink></li>
                 <li><NavLink className={({ isActive }) => isActive ? "active" : ""} to="/panier">Panier</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "active" : ""} to="/paiement">Paiement</NavLink></li>
             </ul>
         </div>
     );

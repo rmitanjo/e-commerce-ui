@@ -3,7 +3,7 @@ import '../../assets/styles/Footer.css';
 export default function Header() {
     return (
         <div className="my-footer">
-            <p>Footer</p>
+            <p>My-Store powered by ReactJS - Copyright </p>
         </div>
     );
 }
