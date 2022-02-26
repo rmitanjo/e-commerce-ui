@@ -1,13 +1,15 @@
 import { useSelector } from 'react-redux';
 
+import MyCartItem from './MyCartItem';
+
 function MyCart() {
-    const cartData = useSelector((state) => state.cartReducer);
-    console.log('Content from Cart');
-    console.log(cartData);
+    const cart = useSelector((state) => state.cartReducer);
 
     return (
         <div className="my-cart">
-            <button onClick={() => test()}>Test</button>
+            {cart.articles.map((item, index) => 
+                <MyCartItem key={index} data={item} />
+            )}
         </div>
     )
 }

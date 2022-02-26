@@ -13,17 +13,13 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from 'redux-thunk';
-import combineReducers from './reducers'; //Read index.js
-
-//import { addToCart } from './actions/cart.action';
+import combineReducers from './redux/reducers'; //Read index.js
 
 //redux
 export const store = createStore(
   combineReducers,
   composeWithDevTools(applyMiddleware(thunk)),
 );
-
-//store.dispatch(addToCart());
 
 function App() {
   return (

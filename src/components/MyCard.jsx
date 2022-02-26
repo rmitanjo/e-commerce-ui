@@ -1,23 +1,16 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../assets/styles/components/MyCard.css';
 
-import { addToCart, getCart } from '../actions/cart.action';
-
-
+import { addToCart, getCart } from '../redux/actions/cart.action';
 
 export default function MyCard(props) {
     const {id, image1, libelle, pu, description} = props.data;
     const img = require('../' + image1);
 
     const dispatch = useDispatch();
-
     const addCartAction = () => {
       //Adding article with some quantities in the cart
       dispatch(addToCart({ id: id, qty: 1 }));
-    }
-
-    const getCartAction = () => {
-      dispatch(getCart());
     }
 
     return (
@@ -28,7 +21,6 @@ export default function MyCard(props) {
         <p>{description}</p>
         <p>
           <button onClick={addCartAction}>Ajouter</button>
-          <button onClick={getCartAction}>Cart</button>
         </p>
       </div>
     );
