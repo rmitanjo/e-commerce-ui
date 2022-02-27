@@ -1,5 +1,6 @@
 import { Fragment , useState, useEffect } from 'react'
 import axios from 'axios';
+import { API_URL } from '../../shared/appconst';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -14,9 +15,7 @@ function PageAccueil() {
 
   useEffect(() => {
     const fetchData = async() => {
-      const result = await axios(
-        'http://localhost/mystore-api/api/articles/lastest'
-      );
+      const result = await axios(API_URL + 'articles/lastest');
 
       setData({ articles: result.data.data });
     };
