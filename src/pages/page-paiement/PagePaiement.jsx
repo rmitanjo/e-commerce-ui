@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 import { API_URL } from '../../shared/appconst';
 import PageContainerFull from '../../pages/layout/PageContainerFull';
@@ -30,6 +31,8 @@ const initialFormData = Object.freeze({
 });
 
 function PagePaiement() {
+    const navigate  = useNavigate();
+
     const [loading, setLoading] = useState(false);
     const [color, setColor] = useState("#04AA6D");
 
@@ -61,7 +64,8 @@ function PagePaiement() {
         .then(res => {
           setLoading(false);
 
-          console.log(res);
+          //Redirection vers la facture
+          navigate("/confirmation-commande/" + res.data.data.id);
         }).catch(error => {
           setLoading(false);
         });
@@ -112,7 +116,7 @@ function PagePaiement() {
               </Row>
 
               <Button variant="primary" type="submit">
-                Submit
+                Commander
               </Button>
             </Form>
           </PageContainerFull>
