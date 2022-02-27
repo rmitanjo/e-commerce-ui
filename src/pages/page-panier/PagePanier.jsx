@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { BsFillTrashFill, BsFillFileArrowUpFill, BsFillFileArrowDownFill } from "react-icons/bs";
 import Stack from 'react-bootstrap/Stack';
 import NumberFormat from 'react-number-format';
+import { useNavigate } from "react-router-dom";
 
 //Actions possibles du panier
 import {
@@ -17,6 +18,7 @@ import {
 } from '../../redux/actions/cart.action';
 
 function PagePanier() {
+    const navigate = useNavigate();
     const cart = useSelector((state) => state.cartReducer);
     
     let total = 0;
@@ -40,6 +42,10 @@ function PagePanier() {
 
     const emptyCartAction = () => {
       dispatch(emptyCart());
+    }
+
+    const paiementAction = () => {
+      navigate("/paiement");
     }
 
     return (
@@ -99,10 +105,9 @@ function PagePanier() {
 
           <div className="button-footer">
             <Stack direction="horizontal" gap={3}>
-              <Button className="ms-auto" variant="warning"
-                onClick={() => emptyCartAction()}>Vider
+              <Button className="ms-auto" variant="warning" onClick={() => emptyCartAction()}>Vider
               </Button>
-              <Button variant="primary">Paiement</Button>
+              <Button variant="primary" onClick={() => paiementAction()}>Paiement</Button>
             </Stack>
           </div>
         </div>

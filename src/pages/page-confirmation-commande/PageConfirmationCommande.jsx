@@ -6,7 +6,7 @@ import PageContainerFull from '../../pages/layout/PageContainerFull';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Moment from 'moment';
 import NumberFormat from 'react-number-format';
@@ -30,6 +30,7 @@ const initialstate = {
 function PageConfirmationCommande() {
     const componentRef = useRef(null);
 
+    const navigate = useNavigate();
     const { idCommande } = useParams();
 
     const dateFormat = 'DD/MM/yyyy';
@@ -56,6 +57,10 @@ function PageConfirmationCommande() {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
+
+    const handleHomePage = () => {
+        navigate("/accueil");
+    }
 
     return (
         <PageContainerFull>
@@ -162,6 +167,7 @@ function PageConfirmationCommande() {
                 <Row className="no-print">
                     <Col xs={12}>
                         <Button onClick={handlePrint} variant="primary" >Imprimer</Button>
+                        <Button onClick={handleHomePage} variant="success" >Retour</Button>
                     </Col>
                 </Row>
             </section>

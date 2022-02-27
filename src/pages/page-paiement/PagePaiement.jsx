@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,11 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+
+//Actions possibles du panier
+import {
+  emptyCart,
+} from '../../redux/actions/cart.action';
 
 const override = css`
   display: block;
@@ -31,13 +36,16 @@ const initialFormData = Object.freeze({
 });
 
 function PagePaiement() {
-    const navigate  = useNavigate();
+    const navigate = useNavigate();
 
     const [loading, setLoading] = useState(false);
     const [color, setColor] = useState("#04AA6D");
 
     const cart = useSelector((state) => state.cartReducer);
     const [formData, updateFormData] = useState(initialFormData);
+
+    //Redux
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
       updateFormData({
@@ -63,6 +71,9 @@ function PagePaiement() {
       axios.post(API_URL + 'commandes', data)
         .then(res => {
           setLoading(false);
+
+          //Réinitialiser le panier
+          dispatch(emptyCart());
 
           //Redirection vers la facture
           navigate("/confirmation-commande/" + res.data.data.id);
