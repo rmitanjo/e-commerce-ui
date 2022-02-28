@@ -76,7 +76,7 @@ function PagePaiement() {
           dispatch(emptyCart());
 
           //Redirection vers la facture
-          navigate("/confirmation-commande/" + res.data.data.id);
+          navigate("/app/confirmation-commande/" + res.data.data.id);
         }).catch(error => {
           setLoading(false);
         });
