@@ -1,4 +1,4 @@
-import { API_URL } from '../../shared/appconst';
+import { API_URL } from '../../../shared/appconst';
 
 import '../../assets/styles/PageConfirmationCommande.css';
 import PageContainerFull from '../../pages/layout/PageContainerFull';

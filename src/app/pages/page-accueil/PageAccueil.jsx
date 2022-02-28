@@ -1,7 +1,7 @@
 import { Fragment , useState, useEffect } from 'react'
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { API_URL } from '../../shared/appconst';
+import { API_URL } from '../../../shared/appconst';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -17,15 +17,17 @@ function PageAccueil() {
     
     const [data, setData] = useState({ articles: [] });
     const [count, setCount] = useState(0);
-    const [currentId, setCurrentId] = useState(null);
+    //const [currentId, setCurrentId] = useState(null);
   
+    /*
     if(currentId != idCategorie) {
       setCurrentId(idCategorie);
     }
+    */
 
     useEffect(() => {
       getArticles();
-    }, [data]);
+    }, []);
 
     const getArticles = () => {
       let url = 'articles/lastest';

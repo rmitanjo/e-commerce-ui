@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-import { API_URL } from '../../shared/appconst';
+import { API_URL } from '../../../shared/appconst';
 import PageContainerFull from '../../pages/layout/PageContainerFull';
 
 import { css } from "@emotion/react";

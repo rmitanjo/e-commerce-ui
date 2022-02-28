@@ -1,4 +1,4 @@
-import { API_URL } from '../../shared/appconst';
+import { API_URL } from '../../../shared/appconst';
 import '../../assets/styles/Sidebar.css';
 
 import React, { useState, useEffect } from 'react';
