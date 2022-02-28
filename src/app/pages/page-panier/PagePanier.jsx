@@ -45,7 +45,7 @@ function PagePanier() {
     }
 
     const paiementAction = () => {
-      navigate("/paiement");
+      navigate("/app/paiement");
     }
 
     return (

@@ -59,7 +59,7 @@ function PageConfirmationCommande() {
     });
 
     const handleHomePage = () => {
-        navigate("/accueil");
+        navigate("/app/accueil");
     }
 
     return (

@@ -1,5 +1,4 @@
 import {
-    BrowserRouter as Router,
     Routes,
     Route,
 } from "react-router-dom";
@@ -9,6 +8,7 @@ import PageAccueil from './pages/page-accueil/PageAccueil';
 import PagePanier from './pages/page-panier/PagePanier';
 import PagePaiement from './pages/page-paiement/PagePaiement';
 import PageConfirmationCommande from './pages/page-confirmation-commande/PageConfirmationCommande';
+import PageArticle from './pages/page-article/PageArticle';
 
 const AppRoute = () => {
     return (
@@ -19,6 +19,7 @@ const AppRoute = () => {
                 <Route path="panier" element={<PagePanier />} />
                 <Route path="paiement" element={<PagePaiement />} />
                 <Route path="confirmation-commande/:idCommande" element={<PageConfirmationCommande />} />
+                <Route path="page-article/:idArticle" element={<PageArticle />} />
                 {/* The default route */}
                 <Route path="/" element={<PageAccueil />} />
             </Route>

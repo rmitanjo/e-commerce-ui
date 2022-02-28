@@ -1,6 +1,6 @@
 .my-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 200px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -20,10 +20,10 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
+    /*background-color: #000;*/
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     font-size: 18px;
 }
   
@@ -33,4 +33,12 @@
 
 .my-card img {
     width: 100%;
+}
+
+.button-add {
+    background-color: #000;
+}
+
+.button-info {
+    background-color: #04AA6D;
 }

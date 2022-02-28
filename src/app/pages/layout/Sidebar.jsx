@@ -28,7 +28,7 @@ function Sidebar() {
     }, []);
 
     const handleClick = (idCategorie) => {
-        navigate("/accueil/" + idCategorie);
+        navigate("/app/accueil/" + idCategorie);
     };
 
     return (
