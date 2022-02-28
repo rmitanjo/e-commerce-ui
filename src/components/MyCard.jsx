@@ -25,7 +25,7 @@ export default function MyCard(props) {
     return (
       <div className="my-card">
         <img src={img} alt="card_picture" />
-        <h1>{libelle} #{id}</h1>
+        <h1>{libelle}</h1>
         <p className="price"><b>MGA {pu}</b></p>
         <p>{description}</p>
         <p>

@@ -18,6 +18,7 @@ render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="accueil" element={<PageAccueil />} />
+        <Route path="accueil/:idCategorie" element={<PageAccueil />} />
         <Route path="panier" element={<PagePanier />} />
         <Route path="paiement" element={<PagePaiement />} />
         <Route path="confirmation-commande/:idCommande" element={<PageConfirmationCommande />} />

@@ -1,4 +1,5 @@
 import { Fragment , useState, useEffect } from 'react'
+import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { API_URL } from '../../shared/appconst';
 
@@ -9,35 +10,50 @@ import '../../assets/styles/Section.css';
 import Sidebar from '../layout/Sidebar';
 import PageContainer from '../../pages/layout/PageContainer';
 import MyCard from '../../components/MyCard';
+import MyCardList from '../../components/MyCardList';
 
 function PageAccueil() {
-  const [data, setData] = useState({ articles: [] });
+    const { idCategorie } = useParams();
+    
+    const [data, setData] = useState({ articles: [] });
+    const [count, setCount] = useState(0);
+    const [currentId, setCurrentId] = useState(null);
+  
+    if(currentId != idCategorie) {
+      setCurrentId(idCategorie);
+    }
 
-  useEffect(() => {
-    const fetchData = async() => {
-      const result = await axios(API_URL + 'articles/lastest');
+    useEffect(() => {
+      getArticles();
+    }, [data]);
 
-      setData({ articles: result.data.data });
-    };
+    const getArticles = () => {
+      let url = 'articles/lastest';
+      if(typeof idCategorie !== 'undefined') url = 'articles/by-categorie/'  + idCategorie;
 
-    fetchData();
-  }, []);
+      axios(API_URL + url)
+        .then((res) => {
+          const articles = res.data.data;
 
-  return (
-    <Fragment>
-      <Sidebar />
-      <PageContainer>
-          <h1>Liste des articles</h1>
-          <Row>
-            {data.articles.map((item, index) =>  
-              <Col key={index}>
-                <MyCard data={item} />
-              </Col>
+          setData({ articles: articles });
+          setCount(articles.length);
+        });
+    }
+
+    return (
+      <Fragment>
+        <Sidebar />
+        <PageContainer>
+            <h1>Liste des articles {idCategorie}</h1>
+            
+            {count > 0 ? (
+              <MyCardList articles={data.articles} />
+            ) : (
+              <p>Aucun article trouvé</p>
             )}
-          </Row>
-      </PageContainer>
-    </Fragment>
-  );
+        </PageContainer>
+      </Fragment>
+    );
 }
 
 export default PageAccueil;

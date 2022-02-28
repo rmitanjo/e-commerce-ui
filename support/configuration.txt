@@ -1,0 +1,15 @@
+#### Configuration du front
+- prérequis:
+  > NodeJS v16
+  > Yarn 1.22.17
+ 
+- Commande installation des paquets nodes, ouvrir la ligne de commande dans le dossier du projet puis lancer:
+  $ npm install
+  
+- Démarrer l'application front:
+  $ yarn start
+  
+  URL: localhost:3000
+  
+- Configuration du lien entre le front et le back
+  > shared/appconst.js

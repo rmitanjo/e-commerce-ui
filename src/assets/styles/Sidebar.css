@@ -4,5 +4,25 @@
 	height: 100%;
 	width: 15%;
     overflow: auto;
-    /*background-color: #2980b9;*/
+}
+
+.category-list ul {
+    width: 200px;
+}
+
+.category-list li {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.category-list li:hover {
+    background-color: #ccc;
+}
+
+.category-list li.active {
+    background-color: #04AA6D;
+    color: white;
 }
