@@ -21,6 +21,7 @@ function PageAccueil() {
   
     if(currentId != idCategorie) {
       setCurrentId(idCategorie);
+      window.location.reload(false);
     }
 
     useEffect(() => {

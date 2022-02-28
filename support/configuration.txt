@@ -13,3 +13,27 @@
   
 - Configuration du lien entre le front et le back
   > shared/appconst.js
+  
+  
+
+
+####  Structure de répértoire:
+- src
+  - assets : "contient les images et les css"
+    - images
+	- styles
+	
+  - components : "contient les composants réutilisables"
+  
+  - pages
+    - layout : "contient les composants de page (header, footer, nav...)"
+	- page-accueil : "contient les composants de la page accueil"
+	- page-article : --||--
+	- page-paiement : --||--
+	- page-panier :  --||--
+	
+  - redux
+    - actions : "contient les déclarations des actions du panier"
+	- reducers : "contient les impléméntations des actions du panier"
+	
+  - shared : contient les configurations globales de l'application
